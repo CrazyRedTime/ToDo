@@ -15,6 +15,7 @@ const categoriesReducer = (state = initialState, action) => {
       return {
         ...state,
         categories: [...state.categories, newCategory],
+        formValue: ''
       };
 
     case "DELETE_CATEGORY":
