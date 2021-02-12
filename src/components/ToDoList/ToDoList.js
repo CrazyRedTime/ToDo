@@ -1,8 +1,10 @@
-import ListItem from "../ListItem/ListItem";
+import ListItem from "./ListItem/ListItem";
 import ToDoListStyles from "./ToDoList.module.scss";
+import {NavLink} from 'react-router-dom';
 
 const ToDoList = ({
   tasks,
+  categories,
   form,
   selectedCategory,
   addTask,
@@ -41,6 +43,7 @@ const ToDoList = ({
 
   return (
     <div className={ToDoListStyles.wrapper}>
+      <div className={ToDoListStyles.input}>
       <form onSubmit={submit}>
         <input
           value={form.text}
@@ -48,12 +51,12 @@ const ToDoList = ({
           className={ToDoListStyles.textInput}
         />
         <select value={form.category} onChange={changeType}>
-          <option value="work">работа</option>
-          <option value="home">дом</option>
-          <option value="other">другое</option>
+          {categories.map((category, index) => <option key={index }value={category.value}>{category.value}</option>)}
         </select>
         <button type="submit">Submit</button>
       </form>
+      <NavLink className={ToDoListStyles.link} to="/settings"><button>Settings</button></NavLink>
+      </div>
       <div className={ToDoListStyles.list}>
         {filteredTasks.map((task, index) => {
           return (
@@ -72,10 +75,8 @@ const ToDoList = ({
         })}
       </div>
       <select className={ToDoListStyles.filter} value={selectedCategory} onChange={select}>
-        <option value="none">без фильтра</option>
-        <option value="work">работа</option>
-        <option value="home">дом</option>
-        <option value="other">другое</option>
+        <option value="none">none</option>
+        {categories.map((category, index) => <option key={index }value={category.value}>{category.value}</option>)}
       </select>
     </div>
   );

@@ -4,7 +4,7 @@
 }
 
 .wrapper {
-  width: 500px;
+  width: 600px;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -18,4 +18,9 @@
 
 .filter {
   margin-top: 10px;
+}
+
+.input {
+  display: flex;
+  justify-content: space-around;
 }

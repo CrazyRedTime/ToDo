@@ -6,7 +6,8 @@ const mapStateToProps = (state) => {
   return {
     tasks: state.toDoList.tasks,
     form: state.toDoList.form,
-    selectedCategory: state.toDoList.selectedCategory
+    selectedCategory: state.toDoList.selectedCategory,
+    categories: state.categories.categories
   }
 };
 
