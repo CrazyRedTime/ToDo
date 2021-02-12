@@ -25,8 +25,8 @@ const Settings = ({ categories, formValue, addCategory, deleteCategory, changeFo
         <button type="submit">Submit</button>
       </form>
       {categories.map((category) => (
-        <div className={SettingsStyles.category}>
-          <div key={category.id} >
+        <div key={category.id} className={SettingsStyles.category}>
+          <div>
           {category.value}
           </div>
           <button onClick={() => deleteCategory(category.id)}>Delete</button>
