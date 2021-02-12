@@ -1,0 +1,24 @@
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+  font-weight: bold;
+  height: 20px;
+  margin: 7px 0 7px 0;
+};
+
+.doneTask {
+  text-decoration: line-through;
+};
+
+.pointer {
+  cursor: pointer;
+}
+
+.text {
+  width: 100%;
+  margin-right: 10px;
+  display: flex;
+  justify-content: space-between;
+}

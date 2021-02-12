@@ -1,0 +1,21 @@
+.list {
+  width: 400px;
+  padding: 0
+}
+
+.wrapper {
+  width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+};
+
+.textInput {
+  width: 300px;
+}
+
+.filter {
+  margin-top: 10px;
+}
