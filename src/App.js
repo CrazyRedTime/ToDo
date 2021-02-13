@@ -6,6 +6,8 @@ import CategorySettingsContainer from './components/CategorySettings/CategorySet
 const App = () => {
   return (
     <div className={Styles.wrapper}>
+      <h1 className={Styles.title}>TODO APP</h1>
+      <div className={Styles.mainWrapper}>      
       <Route exact path="/">
         <Redirect to="/list" />
       </Route>
@@ -17,6 +19,7 @@ const App = () => {
           path="/settings"
           render={() => <CategorySettingsContainer />}
       />
+      </div>
     </div>
   );
 };

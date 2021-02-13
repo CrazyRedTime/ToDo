@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import SettingsStyles from "./CategorySettings.module.scss";
+import { Button , Form } from 'react-bootstrap';
 
 const Settings = ({ categories, formValue, addCategory, deleteCategory, changeFormValue }) => {
 
@@ -16,24 +17,28 @@ const Settings = ({ categories, formValue, addCategory, deleteCategory, changeFo
 
   return (
     <>
-      <form onSubmit={submit}>
-        <input
-          value={formValue}
-          onChange={changeText}
-          className={SettingsStyles.textInput}
-        />
-        <button type="submit">Submit</button>
-      </form>
+      <Form.Group>
+        <form className={SettingsStyles.form} onSubmit={submit}>
+          <Form.Control
+            value={formValue}
+            onChange={changeText}
+            placeholder="Enter category"
+            className={SettingsStyles.input}
+          />
+          <Button variant="success" type="submit">Submit</Button>
+        </form>
+      </Form.Group>
       {categories.map((category) => (
         <div key={category.id} className={SettingsStyles.category}>
-          <div>
-          {category.value}
-          </div>
-          <button onClick={() => deleteCategory(category.id)}>Delete</button>
+          <p className={SettingsStyles.textmain}>
+            {category.value}
+          </p>
+          <Button variant="danger" onClick={() => deleteCategory(category.id)}>Delete</Button>
+          
         </div>
       ))}
       <NavLink className={SettingsStyles.link} to="/list">
-        <button className={SettingsStyles.button}>Go back</button>
+       Go back
       </NavLink>
     </>
   );

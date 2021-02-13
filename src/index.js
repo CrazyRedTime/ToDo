@@ -8,7 +8,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
 import { loadState, saveState } from './state/localStorage';
 import throttle from 'lodash/throttle';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 const persistedState = loadState();
 
 const store = configureStore(persistedState);

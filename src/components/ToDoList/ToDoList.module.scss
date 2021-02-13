@@ -1,26 +1,65 @@
 .list {
-  width: 400px;
-  padding: 0
+    width: 100%;
+    padding: 0
 }
 
 .wrapper {
-  width: 600px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-};
-
-.textInput {
-  width: 300px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.filter {
-  margin-top: 10px;
+;
+.textInput {
+    width: 300px;
 }
 
 .input {
-  display: flex;
-  justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.FormSubmit {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 24px;
+}
+
+.selectCategory {
+    width: 30%!important;
+}
+
+.filterWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.filterWrapperInfo {
+    display: flex;
+    align-items: center;
+}
+
+.filterTitle {
+    font-size: 24px;
+    color: rgb(199, 207, 190);
+    margin: 0 18px 0 0;
+}
+
+@media(max-width:767px) {
+    .FormSubmit {
+        flex-direction: column;
+    }
+    .selectCategory {
+        width: 100%!important;
+        margin: 10px 0;
+    }
+    .filterTitle {
+        font-size: 14px;
+    }
 }

@@ -1,5 +1,6 @@
 import ListItemStyles from "./ListItem.module.scss";
 import classnames from "classnames";
+import { Button } from 'react-bootstrap';
 
 const ListItem = ({
   number,
@@ -29,9 +30,9 @@ const ListItem = ({
         <div className={taskClasses} onClick={isDone ? unComplete : complete}>
           {`${number+1}. ${text}`}
         </div>
-        <div>{category}</div>
+        <div className={ListItemStyles.category}>{category}</div>
       </div>
-      <button onClick={() => deleteTask(id)}>Delete</button>
+      <Button variant="danger" onClick={() => deleteTask(id)}>Delete</Button>
     </div>
   );
 };

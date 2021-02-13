@@ -1,8 +1,28 @@
+@import "~bootstrap/scss/bootstrap";
 .wrapper {
-  width: 600px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-};
+    min-height: 100vh;
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    flex-direction: column;
+    min-width: 320px;
+    overflow: auto;
+}
+
+.mainWrapper {
+    background: #489CC1;
+    max-width: 700px;
+    width: 100%;
+    border-radius: 4px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 40px;
+    color: #000;
+    margin: 0 0 40px 0;
+}

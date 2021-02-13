@@ -1,13 +1,25 @@
-.link {
-  text-decoration: none;
-  color: black;
-}
-
 .category {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 300px;
-    height: 20px;
-    margin: 7px 0 7px 0;
+    width: 100%;
+    min-height: 24px;
+    margin: 0px 0 10px 0;
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 24px;
+}
+
+.textmain {
+    width: 100%;
+    padding: 6px;
+    margin: 0;
+}
+
+.link {
+    margin-left: auto;
 }

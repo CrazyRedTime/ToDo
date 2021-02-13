@@ -1,6 +1,8 @@
 import ListItem from "./ListItem/ListItem";
 import ToDoListStyles from "./ToDoList.module.scss";
 import {NavLink} from 'react-router-dom';
+import { Button , Form } from 'react-bootstrap';
+
 
 const ToDoList = ({
   tasks,
@@ -44,18 +46,20 @@ const ToDoList = ({
   return (
     <div className={ToDoListStyles.wrapper}>
       <div className={ToDoListStyles.input}>
-      <form onSubmit={submit}>
-        <input
-          value={form.text}
-          onChange={changeText}
-          className={ToDoListStyles.textInput}
-        />
-        <select value={form.category} onChange={changeType}>
-          {categories.map((category, index) => <option key={index }value={category.value}>{category.value}</option>)}
-        </select>
-        <button type="submit">Submit</button>
-      </form>
-      <NavLink className={ToDoListStyles.link} to="/settings"><button>Settings</button></NavLink>
+        <Form.Group>
+          <form className={ToDoListStyles.FormSubmit} onSubmit={submit}>
+
+            <Form.Control className={ToDoListStyles.inputTask} value={form.text} onChange={changeText} placeholder="Enter task" />
+
+            <Form.Control className={ToDoListStyles.selectCategory} as="select" value={form.category} onChange={changeType}>
+              {categories.map((category, index) => <option key={index }value={category.value}>{category.value}</option>)}
+            </Form.Control>
+            <Button variant="success" type="submit">Submit</Button>
+          </form>
+      </Form.Group>
+
+
+      
       </div>
       <div className={ToDoListStyles.list}>
         {filteredTasks.map((task, index) => {
@@ -74,10 +78,19 @@ const ToDoList = ({
           );
         })}
       </div>
-      <select className={ToDoListStyles.filter} value={selectedCategory} onChange={select}>
-        <option value="none">none</option>
-        {categories.map((category, index) => <option key={index }value={category.value}>{category.value}</option>)}
-      </select>
+      <div className={ToDoListStyles.filterWrapper}>
+        <div className={ToDoListStyles.filterWrapperInfo}>
+          <h6 className={ToDoListStyles.filterTitle}>filter</h6>
+          <Form.Group>
+            <Form.Control as="select" className={ToDoListStyles.filter} value={selectedCategory} onChange={select}>
+              <option value="none">none</option>
+              {categories.map((category, index) => <option key={index }value={category.value}>{category.value}</option>)}
+            </Form.Control>
+          </Form.Group>
+        </div>
+        
+        <NavLink variant="outline-secondary" className={ToDoListStyles.link} to="/settings">Settings</NavLink>
+      </div>
     </div>
   );
 };
