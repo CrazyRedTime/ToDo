@@ -11,7 +11,7 @@ a {
     margin: 0!important;
 }
 
-@media(max-width:767px) {
+@media(max-width:500px) {
     a {
         font-size: 14px;
     }

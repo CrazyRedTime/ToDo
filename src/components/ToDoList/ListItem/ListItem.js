@@ -20,7 +20,7 @@ const ListItem = ({
     unCompleteTask(id);
   };
 
-  const taskClasses = classnames(ListItemStyles.pointer, {
+  const taskClasses = classnames(ListItemStyles.taskText, {
     [`${ListItemStyles.doneTask}`]: isDone,
   });
 

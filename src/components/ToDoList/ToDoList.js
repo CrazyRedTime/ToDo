@@ -1,7 +1,8 @@
 import ListItem from "./ListItem/ListItem";
 import ToDoListStyles from "./ToDoList.module.scss";
-import {NavLink} from 'react-router-dom';
 import { Button , Form } from 'react-bootstrap';
+import LinkButton from '../LinkButton/LinkButton';
+
 
 
 const ToDoList = ({
@@ -21,7 +22,8 @@ const ToDoList = ({
     e.preventDefault();
     if (form.text) {
       addTask(form.text, form.category);
-    }
+    };
+    console.log(tasks);
   };
 
   const changeText = (e) => {
@@ -54,7 +56,7 @@ const ToDoList = ({
             <Form.Control className={ToDoListStyles.selectCategory} as="select" value={form.category} onChange={changeType}>
               {categories.map((category, index) => <option key={index }value={category.value}>{category.value}</option>)}
             </Form.Control>
-            <Button variant="success" type="submit">Submit</Button>
+            <Button variant="primary" type="submit">Submit</Button>
           </form>
       </Form.Group>
 
@@ -80,7 +82,7 @@ const ToDoList = ({
       </div>
       <div className={ToDoListStyles.filterWrapper}>
         <div className={ToDoListStyles.filterWrapperInfo}>
-          <h6 className={ToDoListStyles.filterTitle}>filter</h6>
+          <h6 className={ToDoListStyles.filterTitle}>Filter:</h6>
           <Form.Group>
             <Form.Control as="select" className={ToDoListStyles.filter} value={selectedCategory} onChange={select}>
               <option value="none">none</option>
@@ -88,8 +90,7 @@ const ToDoList = ({
             </Form.Control>
           </Form.Group>
         </div>
-        
-        <NavLink variant="outline-secondary" className={ToDoListStyles.link} to="/settings">Settings</NavLink>
+        <LinkButton to="/settings">Settings</LinkButton>
       </div>
     </div>
   );

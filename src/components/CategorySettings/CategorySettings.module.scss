@@ -5,6 +5,7 @@
     width: 100%;
     min-height: 24px;
     margin: 0px 0 10px 0;
+    font-weight: bold;
 }
 
 .form {
@@ -20,6 +21,14 @@
     margin: 0;
 }
 
-.link {
-    margin-left: auto;
+.bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.settingsTitle {
+  margin-bottom: 0;
+  color: #fff;
 }

@@ -1,12 +1,18 @@
-import { NavLink } from "react-router-dom";
 import SettingsStyles from "./CategorySettings.module.scss";
-import { Button , Form } from 'react-bootstrap';
+import { Button, Form } from "react-bootstrap";
+import LinkButton from '../LinkButton/LinkButton';
 
-const Settings = ({ categories, formValue, addCategory, deleteCategory, changeFormValue }) => {
-
+const Settings = ({
+  categories,
+  formValue,
+  addCategory,
+  deleteCategory,
+  selectedCategory,
+  changeFormValue,
+}) => {
   const changeText = (e) => {
     changeFormValue(e.target.value);
-  }
+  };
 
   const submit = (e) => {
     e.preventDefault();
@@ -25,21 +31,31 @@ const Settings = ({ categories, formValue, addCategory, deleteCategory, changeFo
             placeholder="Enter category"
             className={SettingsStyles.input}
           />
-          <Button variant="success" type="submit">Submit</Button>
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
         </form>
       </Form.Group>
       {categories.map((category) => (
         <div key={category.id} className={SettingsStyles.category}>
-          <p className={SettingsStyles.textmain}>
-            {category.value}
-          </p>
-          <Button variant="danger" onClick={() => deleteCategory(category.id)}>Delete</Button>
-          
+          <p className={SettingsStyles.textmain}>{category.value}</p>
+          <Button
+            variant="danger"
+            onClick={() => {
+              console.log(selectedCategory);
+              if (category.value !== selectedCategory) {
+                deleteCategory(category.id);
+              }
+            }}
+          >
+            Delete
+          </Button>
         </div>
       ))}
-      <NavLink className={SettingsStyles.link} to="/list">
-       Go back
-      </NavLink>
+      <div className={SettingsStyles.bottom}>
+        <h5 className={SettingsStyles.settingsTitle}>You can't delete selected category</h5>
+      <LinkButton className={SettingsStyles.link} to='/list'>Go back</LinkButton>
+      </div>
     </>
   );
 };

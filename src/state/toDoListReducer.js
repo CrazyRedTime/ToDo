@@ -1,4 +1,3 @@
-import { uniqueId } from "lodash";
 const initialState = {
   tasks: [],
   form: {
@@ -12,7 +11,7 @@ const toDoListReducer = (state = initialState, action) => {
   switch (action.type) {
     case "ADD_TASK":
       const newTask = {
-        id: uniqueId(),
+        id: state.tasks.length ? state.tasks[state.tasks.length - 1].id + 1 : 1,
         text: action.text,
         category: action.category,
         isDone: false,

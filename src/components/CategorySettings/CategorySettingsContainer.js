@@ -5,7 +5,8 @@ import CategorySettings from './CategorySettings';
 const mapStateToProps = (state) => {
   return {
     categories: state.categories.categories,
-    formValue: state.categories.formValue
+    formValue: state.categories.formValue,
+    selectedCategory: state.toDoList.form.category,
   }
 };
 

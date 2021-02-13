@@ -1,7 +1,7 @@
-import { uniqueId } from "lodash";
+
 
 const initialState = {
-  categories: [{ value: "work", id: uniqueId() }, { value: "home", id: uniqueId() }, { value: "other", id: uniqueId() }],
+  categories: [{ value: "work", id: 1 }, { value: "home", id: 2 }, { value: "other", id: 3 }],
   formValue: ''
 };
 
@@ -10,7 +10,7 @@ const categoriesReducer = (state = initialState, action) => {
     case "ADD_CATEGORY":
       const newCategory = {
         value: action.value,
-        id: uniqueId()
+        id: state.categories[state.categories.length - 1].id + 1
       };
       return {
         ...state,
