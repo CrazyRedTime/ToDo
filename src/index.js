@@ -2,10 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import store from './state/redux-store';
+import configureStore from './state/redux-store';
 import { Provider } from "react-redux";
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
+import { loadState, saveState } from './state/localStorage';
+import throttle from 'lodash/throttle';
+
+const persistedState = loadState();
+
+const store = configureStore(persistedState);
+store.subscribe(throttle(() => {
+  saveState(store.getState());
+}, 1000));
 
 ReactDOM.render(
   <BrowserRouter>
