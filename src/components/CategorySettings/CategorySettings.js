@@ -42,7 +42,6 @@ const Settings = ({
           <Button
             variant="danger"
             onClick={() => {
-              console.log(selectedCategory);
               if (category.value !== selectedCategory) {
                 deleteCategory(category.id);
               }

@@ -23,7 +23,6 @@ const ToDoList = ({
     if (form.text) {
       addTask(form.text, form.category);
     };
-    console.log(tasks);
   };
 
   const changeText = (e) => {
