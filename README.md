@@ -4,4 +4,4 @@ Classic ToDoList on react/redux. Features:
   - completing tasks on a click;
   - filter by category;
 
-Installing by npm i. Web version here https://gribble.herokuapp.com
+Installing by npm i. Web version here https://gribble.netlify.app
